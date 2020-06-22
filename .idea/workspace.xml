@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b1ae4c10-31b6-498e-8fe9-45915f1b8d19" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/Application.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/common/PO/PageRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/common/PO/PageResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/common/PO/ResponseCode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/common/PO/ServerResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/common/util/PageUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/constant/Constant.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/DO/Goods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/DO/GoodsQueryModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/controller/GoodsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/dao/GoodsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/service/IGoodsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/goods/service/impl/GoodsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/DO/Member.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/DO/MemberQueryModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/DO/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/VO/PageDataModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/controller/MemberController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/dao/MemberMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/dao/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/service/IMemberService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/member/service/impl/MemberServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/DO/Supplier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/DO/SupplierQueryModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/controller/SupplierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/dao/SupplierMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/service/ISupplierService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/supplier/service/impl/SupplierServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/redis/config/RedisConfiguration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/redis/util/FileUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/redis/util/RedisLockUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/redis/util/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/controller/UserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/dao/ILoginUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/dao/impl/LoginUserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/filter/JwtAuthorizationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/handler/JwtAuthenticationFailureHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/handler/JwtAuthenticationSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/po/SystemUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/po/SystemUserDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/provider/JwtAuthenticationProvider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/service/IUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/service/SystemUserDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/token/JwtAuthenticationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/security/token/TokenRedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/utils/DateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/utils/JwtTokenUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/utils/LoginUserUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/inspur/system/utils/StringUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/generator/generatorConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/lock.lua" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/GoodsMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/MemberMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/SupplierMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/mapping/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/unlock.lua" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/DevelopSoftware/apache-maven-3.6.1" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1aEsFn0Mal5MT0iCl9zsM4uxA54" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="TODO_SCOPE" value="All Places" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.inspur.system.redis.util" />
+      <recent name="com.inspur.system.redis.config" />
+      <recent name="com.inspur" />
+      <recent name="com.inspur.system.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\IDEA_PROJECT\redisJwt\src\main\resources" />
+      <recent name="C:\Users\zhuanghuan\Desktop\redisJwt\src\main\java\com\inspur" />
+      <recent name="C:\Users\zhuanghuan\Desktop\redisJwt\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.Application">
+    <configuration name="JwtTokenUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.inspur.system.utils.JwtTokenUtils" />
+      <module name="redisJwt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inspur.system.utils.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="redisJwt" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.inspur.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.inspur.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.Application" />
+        <item itemvalue="Application.JwtTokenUtils" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b1ae4c10-31b6-498e-8fe9-45915f1b8d19" name="Default Changelist" comment="" />
+      <created>1586311985434</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1586311985434</updated>
+      <workItem from="1586311989058" duration="20107000" />
+      <workItem from="1586338517263" duration="4556000" />
+      <workItem from="1586344450823" duration="978000" />
+      <workItem from="1586345823843" duration="11961000" />
+      <workItem from="1586408438109" duration="10668000" />
+      <workItem from="1586503119893" duration="5743000" />
+      <workItem from="1586738030256" duration="5854000" />
+      <workItem from="1587102186152" duration="1138000" />
+      <workItem from="1587103803531" duration="43000" />
+      <workItem from="1587103958620" duration="964000" />
+      <workItem from="1591232681338" duration="1822000" />
+      <workItem from="1591235015043" duration="27000" />
+      <workItem from="1591235349646" duration="4720000" />
+      <workItem from="1591247211465" duration="69000" />
+      <workItem from="1591248495294" duration="1732000" />
+      <workItem from="1591317008383" duration="1246000" />
+      <workItem from="1591333741793" duration="1254000" />
+      <workItem from="1591338307218" duration="759000" />
+      <workItem from="1591411235664" duration="1802000" />
+      <workItem from="1591608741024" duration="4866000" />
+      <workItem from="1591662394212" duration="2899000" />
+      <workItem from="1591748812242" duration="25000" />
+      <workItem from="1591775590193" duration="1785000" />
+      <workItem from="1591785677864" duration="607000" />
+      <workItem from="1591835656001" duration="21000" />
+      <workItem from="1591838551480" duration="2120000" />
+      <workItem from="1591858065427" duration="1206000" />
+      <workItem from="1591866960287" duration="1964000" />
+      <workItem from="1591921963309" duration="226000" />
+      <workItem from="1591923157067" duration="1916000" />
+      <workItem from="1591938823413" duration="2950000" />
+      <workItem from="1592012939200" duration="3200000" />
+      <workItem from="1592180904358" duration="21000" />
+      <workItem from="1592440395051" duration="56000" />
+      <workItem from="1592465965705" duration="2341000" />
+      <workItem from="1592526977899" duration="4034000" />
+      <workItem from="1592544395286" duration="1207000" />
+      <workItem from="1592803860359" duration="693000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.2.0.RELEASE/spring-security-web-5.2.0.RELEASE.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.class</url>
+          <line>112</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.2.0.RELEASE/spring-security-web-5.2.0.RELEASE-sources.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.java</url>
+          <line>239</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-web/5.2.0.RELEASE/spring-security-web-5.2.0.RELEASE-sources.jar!/org/springframework/security/web/authentication/AbstractAuthenticationProcessingFilter.java</url>
+          <line>324</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

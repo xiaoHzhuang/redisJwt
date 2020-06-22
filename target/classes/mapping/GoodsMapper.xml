@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.inspur.goods.dao.GoodsMapper">
+    <resultMap id="BaseResultMap" type="com.inspur.goods.DO.Goods">
+        <result column="id" property="id" jdbcType="VARCHAR"/>
+        <result column="goodsName" property="goodsname" jdbcType="VARCHAR"/>
+        <result column="goodsCode" property="goodscode" jdbcType="VARCHAR"/>
+        <result column="goodsSize" property="goodssize" jdbcType="VARCHAR"/>
+        <result column="salePrice" property="saleprice" jdbcType="REAL"/>
+        <result column="purchasePrice" property="purchaseprice" jdbcType="REAL"/>
+        <result column="size" property="size" jdbcType="INTEGER"/>
+        <result column="supplierId" property="supplierid" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <resultMap id="entityResultMap" extends="BaseResultMap" type="com.inspur.goods.DO.Goods">
+        <association property="supplier" javaType="com.inspur.supplier.DO.Supplier" columnPrefix="post_">
+            <result column="id" property="id" jdbcType="VARCHAR"/>
+            <result column="supplier_name" property="supplierName" jdbcType="VARCHAR"/>
+            <result column="contact_person" property="contactPerson" jdbcType="VARCHAR"/>
+            <result column="phone" property="phone" jdbcType="VARCHAR"/>
+            <result column="remark" property="remark" jdbcType="LONGVARCHAR"/>
+        </association>
+    </resultMap>
+
+
+    <insert id="insert" parameterType="com.inspur.goods.DO.Goods">
+    insert into goods (id, goodsName, goodsCode, 
+      goodsSize, salePrice, purchasePrice, 
+      size, supplierId)
+    values (#{id,jdbcType=VARCHAR}, #{goodsname,jdbcType=VARCHAR}, #{goodscode,jdbcType=VARCHAR}, 
+      #{goodssize,jdbcType=VARCHAR}, #{saleprice,jdbcType=REAL}, #{purchaseprice,jdbcType=REAL}, 
+      #{size,jdbcType=INTEGER}, #{supplierid,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.inspur.goods.DO.Goods">
+        insert into goods
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="goodsname != null">
+                goodsName,
+            </if>
+            <if test="goodscode != null">
+                goodsCode,
+            </if>
+            <if test="goodssize != null">
+                goodsSize,
+            </if>
+            <if test="saleprice != null">
+                salePrice,
+            </if>
+            <if test="purchaseprice != null">
+                purchasePrice,
+            </if>
+            <if test="size != null">
+                size,
+            </if>
+            <if test="supplierid != null">
+                supplierId,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="goodsname != null">
+                #{goodsname,jdbcType=VARCHAR},
+            </if>
+            <if test="goodscode != null">
+                #{goodscode,jdbcType=VARCHAR},
+            </if>
+            <if test="goodssize != null">
+                #{goodssize,jdbcType=VARCHAR},
+            </if>
+            <if test="saleprice != null">
+                #{saleprice,jdbcType=REAL},
+            </if>
+            <if test="purchaseprice != null">
+                #{purchaseprice,jdbcType=REAL},
+            </if>
+            <if test="size != null">
+                #{size,jdbcType=INTEGER},
+            </if>
+            <if test="supplierid != null">
+                #{supplierid,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="update" parameterType="com.inspur.goods.DO.Goods">
+        UPDATE goods
+        <trim prefix="set" suffixOverrides=",">
+            <if test="goodsname!=null">goodsname=#{goodsname,jdbcType=VARCHAR},</if>
+            <if test="goodscode!=null">goodscode=#{goodscode,jdbcType=VARCHAR},</if>
+            <if test="goodssize!=null">saleprice=#{saleprice,jdbcType=VARCHAR},</if>
+            <if test="saleprice!=null">saleprice=#{saleprice,jdbcType=REAL},</if>
+            <if test="purchaseprice!=null">purchaseprice=#{purchaseprice,jdbcType=REAL},</if>
+            <if test="size!=null">size=#{size,jdbcType=INTEGER},</if>
+            <if test="supplierid!=null">supplierid=#{supplierid,jdbcType=VARCHAR},</if>
+        </trim>
+        WHERE id=#{id}
+    </update>
+
+    <select id="getAll" resultMap="entityResultMap">
+        select
+        a.id, a.goodsName, a.goodsCode,a.goodsSize, a.salePrice, a.purchasePrice, a.size, a.supplierId,
+        b.id post_id, b.supplier_name post_supplier_name, b.contact_person post_contact_person, b.phone post_phone,
+        b.remark post_remark
+        from goods a,supplier b where a.supplierid=b.id
+        <if test="goodsname != null and goodsname != ''">
+            and a.goodsname = #{goodsname,jdbcType=VARCHAR}
+        </if>
+        <if test="goodscode != null and goodscode != ''">
+            and a.goodscode = #{goodscode,jdbcType=VARCHAR}
+        </if>
+        <if test="supplierid != null and supplierid != ''">
+            and a.supplierid = #{supplierid,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <delete id="deleteById">
+         delete from goods where id = #{id}
+    </delete>
+
+    <select id="getById" resultMap="entityResultMap">
+        select
+        a.id, a.goodsName, a.goodsCode,a.goodsSize, a.salePrice, a.purchasePrice, a.size, a.supplierId,
+        b.id post_id, b.supplier_name post_supplier_name, b.contact_person post_contact_person, b.phone post_phone,
+        b.remark post_remark
+        from goods a,supplier b where a.supplierid=b.id
+
+            <if test="id != null and id != ''">
+                and a.id =#{id}
+            </if>
+
+    </select>
+</mapper>
