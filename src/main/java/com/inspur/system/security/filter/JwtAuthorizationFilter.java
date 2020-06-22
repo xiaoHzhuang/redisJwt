@@ -19,10 +19,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
     private TokenRedisUtil tokenRedisUtil;
+
+    private static List notFilterUrl = new ArrayList();
+
+    static {
+        notFilterUrl.add("/user/register");
+    }
 
     public JwtAuthorizationFilter(AuthenticationManager authenticationManager, TokenRedisUtil tokenRedisUtil) {
         super(authenticationManager);
@@ -33,7 +40,18 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
     protected void doFilterInternal(HttpServletRequest request,
                                     HttpServletResponse response,
                                     FilterChain chain) throws IOException, ServletException {
+        String requestUrl = request.getRequestURI();
+        String appName = request.getServletContext().getContextPath();
+        requestUrl= requestUrl.replace(appName, "");
+        if (notFilterUrl.contains(requestUrl)) {
+            request.getRequestDispatcher(requestUrl).forward(request, response);
+        } else {
+            authenticateToken(request, response, chain);
+        }
+    }
 
+    private void authenticateToken(HttpServletRequest request,
+                                   HttpServletResponse response, FilterChain chain) throws IOException, ServletException {
         String tokenHeader = request.getHeader(Constant.TOKEN_HEADER);
         // 如果请求头中没有token信息则直接401状态码，前台自动跳转至浏览器界面
         if (tokenHeader == null || !tokenHeader.startsWith(Constant.TOKEN_PREFIX)) {
@@ -69,16 +87,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
                     return;
                 } else {
                     //4:获取token在redis的剩余有效期，若剩余有效期小于5分钟,则生成新的token
-                    long expireTime = tokenRedisUtil.getTokenExpireTime(userId);
-                    if (expireTime < 300) {
-                        Claims claims = JwtTokenUtils.getTokenBody(tokenFromBrowser);
-                        Map<String, Object> claimsMap = new HashMap<String, Object>(2);
-                        claimsMap.put("userId", claims.get("userId"));
-                        claimsMap.put("userName", claims.get("userName"));
-                        String newToken = JwtTokenUtils.createToken(claims.get("userName").toString(), false, claimsMap);
-                        tokenRedisUtil.saveTokenwithExpireTime(newToken, claims.get("userId").toString());
-                        response.setHeader(Constant.TOKEN_HEADER, newToken);
-                    }
+                    refershToken(userId, tokenFromBrowser, response);
                 }
             }
         }
@@ -87,14 +96,27 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
         super.doFilterInternal(request, response, chain);
     }
 
+    private void refershToken(String userId, String tokenFromBrowser, HttpServletResponse response) {
+        long expireTime = tokenRedisUtil.getTokenExpireTime(userId);
+        if (expireTime < 300) {
+            Claims claims = JwtTokenUtils.getTokenBody(tokenFromBrowser);
+            Map<String, Object> claimsMap = new HashMap<String, Object>(2);
+            claimsMap.put("userId", claims.get("userId"));
+            claimsMap.put("userName", claims.get("userName"));
+            String newToken = JwtTokenUtils.createToken(claims.get("userName").toString(), false, claimsMap);
+            tokenRedisUtil.saveTokenwithExpireTime(newToken, claims.get("userId").toString());
+            response.setHeader(Constant.TOKEN_HEADER, newToken);
+        }
+    }
+
     // 这里从token中获取用户信息并新建一个JwtAuthenticationToken
     private JwtAuthenticationToken getAuthentication(String tokenHeader) {
         String token = tokenHeader.replace(Constant.TOKEN_PREFIX, "");
         String username = JwtTokenUtils.getUsername(token);
         String userId = (String) JwtTokenUtils.getTokenBody(token).get("userId");
         SystemUser systemUser = new SystemUser();
-        systemUser.setUserId(userId);
-        systemUser.setUserName(username);
+        systemUser.setUserid(userId);
+        systemUser.setUsername(username);
         UserDetails userDetails = new SystemUserDetail(systemUser);
         if (username != null) {
             return new JwtAuthenticationToken(userDetails, null, new ArrayList<>());

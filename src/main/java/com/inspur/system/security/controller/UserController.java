@@ -50,8 +50,9 @@ public class UserController {
     }
 
 
-    @RequestMapping("regiser")
-    public ServerResponse<String> regiser(@RequestBody SystemUser user) {
+    @RequestMapping("register")
+    public ServerResponse<String> regiser(@RequestBody  SystemUser user) {
+
         Map<String, String> rs = new HashMap<String, String>();
         try {
             userService.regiser(user);

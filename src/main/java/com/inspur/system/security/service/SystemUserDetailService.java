@@ -12,9 +12,9 @@ public class SystemUserDetailService implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         SystemUser systemUser = new SystemUser();
-        systemUser.setUserId("0001");
-        systemUser.setUserName("scott");
-        systemUser.setPassword("aaaaaa");
+        systemUser.setUserid("0001");
+        systemUser.setUsername("scott");
+        systemUser.setPwd("aaaaaa");
         return new SystemUserDetail(systemUser);
     }
 }

@@ -1,35 +1,41 @@
 package com.inspur.system.security.po;
 
 public class SystemUser {
-    private String userId;
-    private String userName;
-    private String userCaption;
+    private String userid;
+
+    private String username;
+
+    private String usercaption;
+
     private String phone;
-    private String password;
+
+    private String pwd;
+
     private String email;
+    private String checkPassword;
 
-    public String getUserId() {
-        return userId;
+    public String getUserid() {
+        return userid;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setUserid(String userid) {
+        this.userid = userid == null ? null : userid.trim();
     }
 
-    public String getUserName() {
-        return userName;
+    public String getUsername() {
+        return username;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setUsername(String username) {
+        this.username = username == null ? null : username.trim();
     }
 
-    public String getPassword() {
-        return password;
+    public String getUsercaption() {
+        return usercaption;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setUsercaption(String usercaption) {
+        this.usercaption = usercaption == null ? null : usercaption.trim();
     }
 
     public String getPhone() {
@@ -37,15 +43,15 @@ public class SystemUser {
     }
 
     public void setPhone(String phone) {
-        this.phone = phone;
+        this.phone = phone == null ? null : phone.trim();
     }
 
-    public String getUserCaption() {
-        return userCaption;
+    public String getPwd() {
+        return pwd;
     }
 
-    public void setUserCaption(String userCaption) {
-        this.userCaption = userCaption;
+    public void setPwd(String pwd) {
+        this.pwd = pwd == null ? null : pwd.trim();
     }
 
     public String getEmail() {
@@ -53,6 +59,14 @@ public class SystemUser {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        this.email = email == null ? null : email.trim();
+    }
+
+    public String getCheckPassword() {
+        return checkPassword;
+    }
+
+    public void setCheckPassword(String checkPassword) {
+        this.checkPassword = checkPassword;
     }
 }

@@ -12,9 +12,9 @@ public class SystemUserDetail implements UserDetails {
     private Collection<? extends GrantedAuthority> getAuthorities;
 
     public SystemUserDetail(SystemUser systemUser) {
-        this.userId = systemUser.getUserId();
-        this.userName = systemUser.getUserName();
-        this.password = systemUser.getPassword();
+        this.userId = systemUser.getUserid();
+        this.userName = systemUser.getUsername();
+        this.password = systemUser.getPwd();
     }
 
     @Override
