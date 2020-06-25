@@ -1,8 +1,8 @@
-package com.inspur.common.util;
+package com.inspur.system.page.util;
 
 import com.github.pagehelper.PageInfo;
-import com.inspur.common.PO.PageRequest;
-import com.inspur.common.PO.PageResult;
+import com.inspur.system.page.PO.PageRequest;
+import com.inspur.system.page.PO.PageResult;
 
 /**
  * Created with IntelliJ IDEA.

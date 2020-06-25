@@ -1,4 +1,4 @@
-package com.inspur.common.PO;
+package com.inspur.system.page.PO;
 
 /**
  * Created with IntelliJ IDEA.
@@ -21,12 +21,15 @@ public class PageRequest {
     public int getPageNum() {
         return pageNum;
     }
+
     public void setPageNum(int pageNum) {
         this.pageNum = pageNum;
     }
+
     public int getPageSize() {
         return pageSize;
     }
+
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
     }

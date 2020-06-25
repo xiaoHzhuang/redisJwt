@@ -2,9 +2,9 @@ package com.inspur.member.service.impl;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.inspur.common.PO.PageRequest;
-import com.inspur.common.PO.PageResult;
-import com.inspur.common.util.PageUtils;
+import com.inspur.system.page.PO.PageRequest;
+import com.inspur.system.page.PO.PageResult;
+import com.inspur.system.page.util.PageUtils;
 import com.inspur.member.DO.Member;
 import com.inspur.member.DO.MemberQueryModel;
 import com.inspur.member.dao.MemberMapper;

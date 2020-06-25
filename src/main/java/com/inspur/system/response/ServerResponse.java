@@ -1,4 +1,4 @@
-package com.inspur.common.PO;
+package com.inspur.system.response;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;

@@ -1,8 +1,7 @@
 package com.inspur.system.security.controller;
 
-import com.inspur.common.PO.ServerResponse;
+import com.inspur.system.response.ServerResponse;
 import com.inspur.constant.Constant;
-import com.inspur.member.DO.Member;
 import com.inspur.system.security.po.SystemUser;
 import com.inspur.system.security.po.SystemUserDetail;
 import com.inspur.system.security.service.IUserService;
@@ -51,15 +50,12 @@ public class UserController {
 
 
     @RequestMapping("register")
-    public ServerResponse<String> regiser(@RequestBody  SystemUser user) {
-
-        Map<String, String> rs = new HashMap<String, String>();
+    public ServerResponse<String> regiser(@RequestBody SystemUser user) {
         try {
             userService.regiser(user);
-            rs.put("code", "1");
         } catch (Exception e) {
             e.printStackTrace();
-            rs.put("code", "0");
+            return ServerResponse.createByErrorMessage("注册失败");
         }
         return ServerResponse.createBySuccess("1");
     }
