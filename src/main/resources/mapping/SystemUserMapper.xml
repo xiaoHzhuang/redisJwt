@@ -1,61 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.inspur.system.security.dao.SystemUserMapper" >
-  <resultMap id="BaseResultMap" type="com.inspur.system.security.po.SystemUser" >
-    <result column="userId" property="userid" jdbcType="VARCHAR" />
-    <result column="userName" property="username" jdbcType="VARCHAR" />
-    <result column="userCaption" property="usercaption" jdbcType="VARCHAR" />
-    <result column="phone" property="phone" jdbcType="VARCHAR" />
-    <result column="pwd" property="pwd" jdbcType="VARCHAR" />
-    <result column="email" property="email" jdbcType="VARCHAR" />
-  </resultMap>
-  <insert id="insert" parameterType="com.inspur.system.security.po.SystemUser" >
-    insert into systemuser (userId, userName, userCaption, 
-      phone, pwd, email)
-    values (#{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{usercaption,jdbcType=VARCHAR}, 
-      #{phone,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.inspur.system.security.po.SystemUser" >
-    insert into systemuser
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        userId,
-      </if>
-      <if test="username != null" >
-        userName,
-      </if>
-      <if test="usercaption != null" >
-        userCaption,
-      </if>
-      <if test="phone != null" >
-        phone,
-      </if>
-      <if test="pwd != null" >
-        pwd,
-      </if>
-      <if test="email != null" >
-        email,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="userid != null" >
-        #{userid,jdbcType=VARCHAR},
-      </if>
-      <if test="username != null" >
-        #{username,jdbcType=VARCHAR},
-      </if>
-      <if test="usercaption != null" >
-        #{usercaption,jdbcType=VARCHAR},
-      </if>
-      <if test="phone != null" >
-        #{phone,jdbcType=VARCHAR},
-      </if>
-      <if test="pwd != null" >
-        #{pwd,jdbcType=VARCHAR},
-      </if>
-      <if test="email != null" >
-        #{email,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+<mapper namespace="com.inspur.system.security.dao.SystemUserMapper">
+    <resultMap id="BaseResultMap" type="com.inspur.system.security.po.SystemUser">
+        <result column="userId" property="userid" jdbcType="VARCHAR"/>
+        <result column="userName" property="username" jdbcType="VARCHAR"/>
+        <result column="userCaption" property="usercaption" jdbcType="VARCHAR"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="pwd" property="pwd" jdbcType="VARCHAR"/>
+        <result column="email" property="email" jdbcType="VARCHAR"/>
+    </resultMap>
+    <insert id="insert" parameterType="com.inspur.system.security.po.SystemUser">
+      insert into systemuser (userId, userName, userCaption,
+        phone, pwd, email)
+      values (#{userid,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{usercaption,jdbcType=VARCHAR},
+        #{phone,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.inspur.system.security.po.SystemUser">
+        insert into systemuser
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="userid != null">
+                userId,
+            </if>
+            <if test="username != null">
+                userName,
+            </if>
+            <if test="usercaption != null">
+                userCaption,
+            </if>
+            <if test="phone != null">
+                phone,
+            </if>
+            <if test="pwd != null">
+                pwd,
+            </if>
+            <if test="email != null">
+                email,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="userid != null">
+                #{userid,jdbcType=VARCHAR},
+            </if>
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="usercaption != null">
+                #{usercaption,jdbcType=VARCHAR},
+            </if>
+            <if test="phone != null">
+                #{phone,jdbcType=VARCHAR},
+            </if>
+            <if test="pwd != null">
+                #{pwd,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="getUserByUserName" parameterType="String" resultType="com.inspur.system.security.po.SystemUser">
+        select * from systemuser
+        where userName=#{userName} or phone=#{userName}
+    </select>
 </mapper>

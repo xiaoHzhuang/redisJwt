@@ -19,6 +19,7 @@ public class SystemUser {
     }
 
     public void setUserid(String userid) {
+
         this.userid = userid == null ? null : userid.trim();
     }
 
@@ -51,6 +52,7 @@ public class SystemUser {
     }
 
     public void setPwd(String pwd) {
+
         this.pwd = pwd == null ? null : pwd.trim();
     }
 
@@ -59,6 +61,7 @@ public class SystemUser {
     }
 
     public void setEmail(String email) {
+
         this.email = email == null ? null : email.trim();
     }
 

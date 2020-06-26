@@ -27,4 +27,6 @@ public class Constant {
      */
     public static final String SIGNING_KEY = "jwtsecretdemo";
     public static final String ISS = "zhuanghuan";
+
+    public static final String LOGIN_ERROR = "The username or password is incorrect";
 }

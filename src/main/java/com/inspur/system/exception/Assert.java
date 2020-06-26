@@ -41,4 +41,15 @@ public interface Assert {
             throw newException(args);
         }
     }
+
+    /**
+     * 如果不为空，抛出异常
+     *
+     * @param obj
+     */
+    default void assertNull(Object obj) {
+        if (obj != null) {
+            throw newException(obj);
+        }
+    }
 }

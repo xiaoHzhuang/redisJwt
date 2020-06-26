@@ -1,6 +1,8 @@
 package com.inspur.system.security.provider;
 
+import com.inspur.constant.Constant;
 import com.inspur.system.security.token.JwtAuthenticationToken;
+import com.inspur.system.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -11,7 +13,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.stereotype.Component;
 
 @Component
-public class JwtAuthenticationProvider implements AuthenticationProvider {
+public class JwtLoginAuthenticationProvider implements AuthenticationProvider {
     @Autowired
     private UserDetailsService systemUserDetailService;
 
@@ -21,10 +23,11 @@ public class JwtAuthenticationProvider implements AuthenticationProvider {
         String password = (String) authentication.getCredentials();
         UserDetails systemUserDetails = systemUserDetailService.loadUserByUsername(userName);
         JwtAuthenticationToken jwtAuthenticationToken = null;
-        if (systemUserDetails.getPassword().equals(password)) {
+        if (!StringUtils.isEmpty(systemUserDetails.getPassword()) && systemUserDetails.getPassword().equals(password)) {
             jwtAuthenticationToken = new JwtAuthenticationToken(systemUserDetails, password, systemUserDetails.getAuthorities());
         } else {
-            throw new BadCredentialsException("用户名或者密码不对");
+            //用户名或者密码不对
+            throw new BadCredentialsException(Constant.LOGIN_ERROR);
         }
         return jwtAuthenticationToken;
     }

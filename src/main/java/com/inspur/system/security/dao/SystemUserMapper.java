@@ -8,4 +8,7 @@ public interface SystemUserMapper {
     int insert(SystemUser record);
 
     int insertSelective(SystemUser record);
+
+    SystemUser getUserByUserName(String userName);
+
 }

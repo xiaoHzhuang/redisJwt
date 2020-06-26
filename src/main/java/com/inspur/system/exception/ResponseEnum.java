@@ -10,7 +10,9 @@ public enum ResponseEnum implements BusinessExceptionAssert {
     /**
      * Licence not found
      */
-    LICENCE_NOT_FOUND(ResponseCode.LICENCE_NOT_FOUND.getCode(), ResponseCode.LICENCE_NOT_FOUND.getDesc());
+    LICENCE_NOT_FOUND(ResponseCode.LICENCE_NOT_FOUND.getCode(), ResponseCode.LICENCE_NOT_FOUND.getDesc()),
+
+    USER_EXIST(ResponseCode.USER_EXIST.getCode(), ResponseCode.USER_EXIST.getDesc());
 
     ResponseEnum(int code, String message) {
         this.code = code;

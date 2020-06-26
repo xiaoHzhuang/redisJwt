@@ -40,6 +40,7 @@ public class GoodsController {
         }
         return rs;
     }
+
     @RequestMapping("list/search/{pageNum}/{pageSize}")
     public PageResult search(@PathVariable("pageNum") int pageNum, @PathVariable("pageSize") int pageSize, String goodsname, String goodscode, String supplierid) throws ParseException {
         PageRequest pageRequest = new PageRequest();

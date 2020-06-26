@@ -1,5 +1,6 @@
 package com.inspur.system.security.service.impl;
 
+import com.inspur.system.exception.ResponseEnum;
 import com.inspur.system.security.dao.SystemUserMapper;
 import com.inspur.system.security.po.SystemUser;
 import com.inspur.system.security.service.IUserService;
@@ -16,6 +17,11 @@ public class UserServiceImpl implements IUserService {
     @Override
     public void regiser(SystemUser user) {
         user.setUserid(UUID.randomUUID().toString());
-        systemUserMapper.insert(user);
+        SystemUser systemUser = systemUserMapper.getUserByUserName(user.getUsername());
+        if (systemUser == null) {
+            systemUserMapper.insert(user);
+        } else {
+            ResponseEnum.USER_EXIST.assertNull(user);
+        }
     }
 }

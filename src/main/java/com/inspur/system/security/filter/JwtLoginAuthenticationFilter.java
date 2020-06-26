@@ -12,12 +12,15 @@ import org.springframework.util.Assert;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class JwtAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
+/**
+ * 登陆请求授权过滤器
+ */
+public class JwtLoginAuthenticationFilter extends AbstractAuthenticationProcessingFilter {
     private String usernameParameter = "username";
     private String passwordParameter = "password";
     private boolean postOnly = true;
 
-    public JwtAuthenticationFilter() {
+    public JwtLoginAuthenticationFilter() {
         super(new AntPathRequestMatcher("/user/login", "POST"));
     }
 

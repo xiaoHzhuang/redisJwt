@@ -1,11 +1,45 @@
 package com.inspur.system.response;
 
 public enum ResponseCode {
+
+    /**
+     * 登陆失败
+     */
+    NEED_LOGIN(-1, "登陆失败"),
+
+    /**
+     * 失败
+     */
     ERROR(0, "ERROR"),
+    /**
+     * 成功
+     */
     SUCCESS(1, "SUCCESS"),
-    NEED_LOGIN(10, "NEED_LOGIN"),
+    /**
+     * 用户已被注册
+     */
+
+    USER_EXIST(2, "用户已被注册"),
+
+
+    /**
+     * 登陆失败
+     */
+    RE_LOGIN(401, "Token过期,重新登录"),
+    /**
+     * 重新发送请求
+     */
+    RESEND_REQUEST(402, "重新发送请求"),
+    /**
+     * 证书错误
+     */
     BAD_LICENCE_TYPE(7001, "Bad licence type."),
+
+    /**
+     * 证书不存在
+     */
     LICENCE_NOT_FOUND(7002, "Licence not found.");
+
     /**
      * 响应代号
      */
@@ -20,10 +54,20 @@ public enum ResponseCode {
         this.desc = desc;
     }
 
+    /**
+     * 返回响应代号
+     *
+     * @return
+     */
     public int getCode() {
         return code;
     }
 
+    /**
+     * 返回响应描述
+     *
+     * @return
+     */
     public String getDesc() {
         return desc;
     }

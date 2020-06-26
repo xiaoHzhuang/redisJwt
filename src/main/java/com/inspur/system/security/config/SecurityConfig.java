@@ -1,7 +1,7 @@
 package com.inspur.system.security.config;
 
-import com.inspur.system.security.filter.JwtAuthenticationFilter;
-import com.inspur.system.security.filter.JwtAuthorizationFilter;
+import com.inspur.system.security.filter.JwtLoginAuthenticationFilter;
+import com.inspur.system.security.filter.JwtRequestAuthorizationFilter;
 import com.inspur.system.security.token.TokenRedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -32,30 +32,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Qualifier("authenticationManagerBean")
     private AuthenticationManager authenticationManager;
     /**
-     * 自定义身份验证提供程序
+     * 自定义登陆请求身份验证提供程序
      */
     @Autowired
-    @Qualifier("jwtAuthenticationProvider")
-    private AuthenticationProvider jwtAuthenticationProvider;
+    @Qualifier("jwtLoginAuthenticationProvider")
+    private AuthenticationProvider jwtLoginAuthenticationProvider;
 
     /**
-     * 认证成功的处理器
+     * 登陆请求认证成功的处理器
      */
     @Autowired
-    @Qualifier("jwtAuthenticationSuccessHandler")
-    private AuthenticationSuccessHandler jwtAuthenticationSuccessHandler;
+    @Qualifier("jwtLoginAuthenticationSuccessHandler")
+    private AuthenticationSuccessHandler jwtLoginAuthenticationSuccessHandler;
     /**
-     * 认证失败的处理器
+     * 登陆请求认证失败的处理器
      */
     @Autowired
-    @Qualifier("jwtAuthenticationFailureHandler")
-    private AuthenticationFailureHandler jwtAuthenticationFailureHandler;
+    @Qualifier("jwtLoginAuthenticationFailureHandler")
+    private AuthenticationFailureHandler jwtLoginAuthenticationFailureHandler;
+    /**
+     * token工具类
+     */
     @Autowired
     private TokenRedisUtil tokenRedisUtil;
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.authenticationProvider(jwtAuthenticationProvider);
+        auth.authenticationProvider(jwtLoginAuthenticationProvider);
     }
 
     @Override
@@ -68,8 +71,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests().antMatchers("/user/login").authenticated().anyRequest().authenticated()
                 // token 访问,关闭session
                 .and().sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-                .addFilterBefore(jwtAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
-                .addFilterAfter(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(jwtLoginAuthenticationFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterAfter(jwtRequestAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
         // 解决禁止嵌入iframe的问题，
         http.headers().frameOptions().disable()
                 // 关闭csrf攻击防御
@@ -83,17 +86,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public JwtAuthenticationFilter jwtAuthenticationFilter() {
-        JwtAuthenticationFilter filter = new JwtAuthenticationFilter();
+    public JwtLoginAuthenticationFilter jwtLoginAuthenticationFilter() {
+        JwtLoginAuthenticationFilter filter = new JwtLoginAuthenticationFilter();
         filter.setAuthenticationManager(authenticationManager);
-        filter.setAuthenticationSuccessHandler(jwtAuthenticationSuccessHandler);
-        filter.setAuthenticationFailureHandler(jwtAuthenticationFailureHandler);
+        filter.setAuthenticationSuccessHandler(jwtLoginAuthenticationSuccessHandler);
+        filter.setAuthenticationFailureHandler(jwtLoginAuthenticationFailureHandler);
         return filter;
     }
 
     @Bean
-    public JwtAuthorizationFilter jwtAuthorizationFilter() {
-        JwtAuthorizationFilter filter = new JwtAuthorizationFilter(authenticationManager,tokenRedisUtil);
+    public JwtRequestAuthorizationFilter jwtRequestAuthorizationFilter() {
+        JwtRequestAuthorizationFilter filter = new JwtRequestAuthorizationFilter(authenticationManager, tokenRedisUtil);
         return filter;
     }
 
