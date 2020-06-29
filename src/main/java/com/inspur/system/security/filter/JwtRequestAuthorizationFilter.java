@@ -85,10 +85,10 @@ public class JwtRequestAuthorizationFilter extends BasicAuthenticationFilter {
                 return;
             } else {
                 String tokenInRedis = tokenRedisUtil.getToken(userId);
-                //若来自前台请求的token和redis中存储的token信息不一致，则返回状态码-2，前台重新发送请求
+                //若来自前台请求的token和redis中存储的token信息不一致，则返回状态码402，前台重新发送请求
                 if (!tokenFromBrowser.equals(tokenInRedis)) {
                     logger.info("token已无效");
-                    reLoginResponse(response, "token已无效", ResponseCode.RESEND_REQUEST.getCode());
+                    reLoginResponse(response, "token已无效", ResponseCode.RESEND_REQUEST.getCode(), ResponseCode.RESEND_REQUEST.getCode());
                     return;
                 } else {
                     //4:获取token在redis的剩余有效期，若剩余有效期小于5分钟,则生成新的token
@@ -118,7 +118,14 @@ public class JwtRequestAuthorizationFilter extends BasicAuthenticationFilter {
         Map<String, String> infoMap = new HashMap<String, String>(2);
         infoMap.put("status", code + "");
         infoMap.put("msg", msg);
-        response.setStatus(code);
+        HttpResponseUtil.outputJsonMsg(response, infoMap);
+    }
+
+    private void reLoginResponse(HttpServletResponse response, String msg, int code, int statusCode) throws IOException {
+        Map<String, String> infoMap = new HashMap<String, String>(2);
+        infoMap.put("status", code + "");
+        infoMap.put("msg", msg);
+        response.setStatus(statusCode);
         HttpResponseUtil.outputJsonMsg(response, infoMap);
     }
 
