@@ -62,4 +62,8 @@
         select * from systemuser
         where userName=#{userName} or phone=#{userName}
     </select>
+    <select id="getUserByUserMail" parameterType="String" resultType="com.inspur.system.security.po.SystemUser">
+        select * from systemuser
+        where email=#{userMail}
+    </select>
 </mapper>

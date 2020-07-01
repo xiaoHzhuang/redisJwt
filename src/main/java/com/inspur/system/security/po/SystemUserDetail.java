@@ -9,13 +9,15 @@ public class SystemUserDetail implements UserDetails {
     private String userId;
     private String userName;
     private String password;
+    private String userCaption;
     private Collection<? extends GrantedAuthority> getAuthorities;
 
     public SystemUserDetail(SystemUser systemUser) {
-        if(systemUser!=null){
+        if (systemUser != null) {
             this.userId = systemUser.getUserid();
             this.userName = systemUser.getUsername();
             this.password = systemUser.getPwd();
+            this.userCaption = systemUser.getUsercaption();
         }
     }
 
@@ -60,5 +62,13 @@ public class SystemUserDetail implements UserDetails {
 
     public void setUserId(String userId) {
         this.userId = userId;
+    }
+
+    public String getUserCaption() {
+        return userCaption;
+    }
+
+    public void setUserCaption(String userCaption) {
+        this.userCaption = userCaption;
     }
 }

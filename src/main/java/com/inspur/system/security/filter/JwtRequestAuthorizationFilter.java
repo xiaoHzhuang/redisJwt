@@ -37,6 +37,7 @@ public class JwtRequestAuthorizationFilter extends BasicAuthenticationFilter {
      */
     static {
         notFilterUrl.add("/user/register");
+        notFilterUrl.add("/user/pwd/retrieve");
     }
 
     public JwtRequestAuthorizationFilter(AuthenticationManager authenticationManager, TokenRedisUtil tokenRedisUtil) {

@@ -42,7 +42,7 @@ public class GoodsServiceImpl implements IGoodsService {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<Goods> goodsList =goodsMapper.getAll(goodsQueryModel);
+        List<Goods> goodsList =goodsMapper.listGoods(goodsQueryModel);
         return PageUtils.getPageResult(pageRequest,new PageInfo<Goods>(goodsList));
     }
 

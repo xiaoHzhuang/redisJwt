@@ -11,4 +11,5 @@ public interface SystemUserMapper {
 
     SystemUser getUserByUserName(String userName);
 
+    SystemUser getUserByUserMail(String userMail);
 }

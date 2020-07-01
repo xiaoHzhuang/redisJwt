@@ -15,7 +15,7 @@ public interface SupplierMapper {
 
     void update(Supplier supplier);
 
-    List<Supplier> getAllSupplier(SupplierQueryModel supplierQueryModel);
+    List<Supplier> listSuppliers(SupplierQueryModel supplierQueryModel);
 
     Supplier getSupplierById(@Param("id") String id);
 

@@ -65,7 +65,7 @@ public class MemberServiceImpl implements IMemberService {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<Member> memberList = memberMapper.getAllMember(memberQueryModel);
+        List<Member> memberList = memberMapper.listMembers(memberQueryModel);
         return new PageInfo<Member>(memberList);
     }
 

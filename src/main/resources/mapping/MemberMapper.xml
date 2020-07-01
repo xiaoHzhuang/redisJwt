@@ -17,7 +17,7 @@
     </sql>
 
     <!-- 查询用户 -->
-    <select id="getAllMember" resultMap="BaseResultMap">
+    <select id="listMembers" resultMap="BaseResultMap">
         select
         <include refid="Base_Column_List"/>
         from member a

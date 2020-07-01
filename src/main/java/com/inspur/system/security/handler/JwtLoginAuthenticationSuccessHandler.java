@@ -35,6 +35,7 @@ public class JwtLoginAuthenticationSuccessHandler extends SavedRequestAwareAuthe
         response.setHeader(Constant.TOKEN_HEADER, token);
         request.setAttribute(Constant.TOKEN_HEADER, token);
         request.setAttribute("userName", systemUserDetail.getUsername());
+        request.setAttribute("userCaption", systemUserDetail.getUserCaption());
         //请求内部重定向
         request.getRequestDispatcher("/user/login").forward(request, response);
     }

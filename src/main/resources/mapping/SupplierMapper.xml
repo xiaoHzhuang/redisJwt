@@ -19,7 +19,7 @@
     values (#{id,jdbcType=VARCHAR}, #{supplierName,jdbcType=VARCHAR}, #{contactPerson,jdbcType=VARCHAR}, 
       #{phone,jdbcType=VARCHAR}, #{remark,jdbcType=LONGVARCHAR})
   </insert>
-    <select id="getAllSupplier" resultMap="ResultMapWithBLOBs">
+    <select id="listSuppliers" resultMap="ResultMapWithBLOBs">
         select
         <include refid="Base_Column_List"/>
         from supplier a

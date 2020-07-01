@@ -9,7 +9,7 @@ import java.util.List;
 
 @Mapper
 public interface MemberMapper {
-    List<Member> getAllMember(MemberQueryModel memberQueryModel);
+    List<Member> listMembers(MemberQueryModel memberQueryModel);
 
     void save(Member member);
 

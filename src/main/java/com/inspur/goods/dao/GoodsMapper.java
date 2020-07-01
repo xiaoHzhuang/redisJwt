@@ -15,7 +15,7 @@ public interface GoodsMapper {
 
     void update(Goods record);
 
-    List<Goods> getAll(GoodsQueryModel goodsQueryModel);
+    List<Goods> listGoods(GoodsQueryModel goodsQueryModel);
 
     void deleteById(@Param("id") String id);
 

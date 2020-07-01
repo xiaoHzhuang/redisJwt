@@ -1,0 +1,124 @@
+2020-06-30 13:06:13.006 [restartedMain] INFO  com.inspur.Application - Starting Application on zhuanghuan00 with PID 24676 (E:\IDEA_PROJECT\redisJwt\target\classes started by zhuanghuan in E:\IDEA_PROJECT\redisJwt)
+2020-06-30 13:06:13.027 [restartedMain] INFO  com.inspur.Application - No active profile set, falling back to default profiles: default
+2020-06-30 13:06:13.208 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-30 13:06:13.208 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-30 13:06:15.741 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 13:06:15.747 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-30 13:06:15.840 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 60ms. Found 0 repository interfaces.
+2020-06-30 13:06:16.533 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 13:06:17.435 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+2020-06-30 13:06:17.455 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:06:17.456 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-30 13:06:17.457 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-30 13:06:17.746 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring embedded WebApplicationContext
+2020-06-30 13:06:17.750 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4540 ms
+2020-06-30 13:06:20.558 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-06-30 13:06:20.674 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f63b161, org.springframework.security.web.context.SecurityContextPersistenceFilter@d9dd255, org.springframework.security.web.header.HeaderWriterFilter@1b9a43aa, org.springframework.security.web.authentication.logout.LogoutFilter@7ba25c09, com.inspur.system.security.filter.JwtLoginAuthenticationFilter@4bed5b33, com.inspur.system.security.filter.JwtRequestAuthorizationFilter@1f4f28b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7beb72b5, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@44107853, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@691ea8c3, org.springframework.security.web.session.SessionManagementFilter@3ff6ac28, org.springframework.security.web.access.ExceptionTranslationFilter@2050f1a2, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@8cd7081]
+2020-06-30 13:06:20.954 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:06:21.850 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-30 13:06:21.910 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:06:22.778 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path '/JwtVue'
+2020-06-30 13:06:22.785 [restartedMain] INFO  com.inspur.Application - Started Application in 12.422 seconds (JVM running for 16.072)
+2020-06-30 13:09:13.009 [http-nio-8085-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-30 13:09:13.009 [http-nio-8085-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-30 13:09:13.024 [http-nio-8085-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2020-06-30 13:09:13.248 [http-nio-8085-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-30 13:09:13.989 [http-nio-8085-exec-2] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-30 13:09:15.407 [http-nio-8085-exec-2] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2020-06-30 13:09:15.412 [http-nio-8085-exec-2] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2020-06-30 13:09:53.942 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:09:55.742 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-30 13:09:55.783 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-30 13:10:17.196 [restartedMain] INFO  com.inspur.Application - Starting Application on zhuanghuan00 with PID 25872 (E:\IDEA_PROJECT\redisJwt\target\classes started by zhuanghuan in E:\IDEA_PROJECT\redisJwt)
+2020-06-30 13:10:17.206 [restartedMain] INFO  com.inspur.Application - No active profile set, falling back to default profiles: default
+2020-06-30 13:10:17.359 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-30 13:10:17.360 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-30 13:10:19.410 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 13:10:19.419 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-30 13:10:19.544 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 84ms. Found 0 repository interfaces.
+2020-06-30 13:10:20.498 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 13:10:21.361 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+2020-06-30 13:10:21.386 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:10:21.387 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-30 13:10:21.388 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-30 13:10:21.634 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring embedded WebApplicationContext
+2020-06-30 13:10:21.635 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4275 ms
+2020-06-30 13:10:23.634 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-06-30 13:10:23.701 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@666c9661, org.springframework.security.web.context.SecurityContextPersistenceFilter@1d50b48, org.springframework.security.web.header.HeaderWriterFilter@9b38b70, org.springframework.security.web.authentication.logout.LogoutFilter@73d3dde4, com.inspur.system.security.filter.JwtLoginAuthenticationFilter@5dee14d0, com.inspur.system.security.filter.JwtRequestAuthorizationFilter@2ee2089, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a59b0ad, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@48a30758, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@d11df0e, org.springframework.security.web.session.SessionManagementFilter@7015cc9b, org.springframework.security.web.access.ExceptionTranslationFilter@5fe70e63, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@126b9269]
+2020-06-30 13:10:23.993 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:10:24.725 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-30 13:10:24.789 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:10:25.031 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path '/JwtVue'
+2020-06-30 13:10:25.039 [restartedMain] INFO  com.inspur.Application - Started Application in 11.419 seconds (JVM running for 14.843)
+2020-06-30 13:10:39.020 [http-nio-8085-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-30 13:10:39.022 [http-nio-8085-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-30 13:10:39.039 [http-nio-8085-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2020-06-30 13:10:39.132 [http-nio-8085-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-30 13:10:39.507 [http-nio-8085-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-30 13:10:40.187 [http-nio-8085-exec-1] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2020-06-30 13:10:40.192 [http-nio-8085-exec-1] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2020-06-30 13:12:58.147 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:12:59.286 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-30 13:12:59.318 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-30 13:13:38.782 [restartedMain] INFO  com.inspur.Application - Starting Application on zhuanghuan00 with PID 14392 (E:\IDEA_PROJECT\redisJwt\target\classes started by zhuanghuan in E:\IDEA_PROJECT\redisJwt)
+2020-06-30 13:13:38.803 [restartedMain] INFO  com.inspur.Application - No active profile set, falling back to default profiles: default
+2020-06-30 13:13:39.052 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-30 13:13:39.053 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-30 13:13:41.160 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 13:13:41.165 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-30 13:13:41.258 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 63ms. Found 0 repository interfaces.
+2020-06-30 13:13:42.342 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 13:13:43.356 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+2020-06-30 13:13:43.375 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:13:43.376 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-30 13:13:43.377 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-30 13:13:43.669 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring embedded WebApplicationContext
+2020-06-30 13:13:43.669 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 4615 ms
+2020-06-30 13:13:46.941 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-06-30 13:13:47.091 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4d628961, org.springframework.security.web.context.SecurityContextPersistenceFilter@440bfeb0, org.springframework.security.web.header.HeaderWriterFilter@68bba7af, org.springframework.security.web.authentication.logout.LogoutFilter@15d89589, com.inspur.system.security.filter.JwtLoginAuthenticationFilter@70d52fdc, com.inspur.system.security.filter.JwtRequestAuthorizationFilter@5417156a, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@324ce301, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@30271d6b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@edd25a4, org.springframework.security.web.session.SessionManagementFilter@2a375fc3, org.springframework.security.web.access.ExceptionTranslationFilter@29f8d496, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1baa8e02]
+2020-06-30 13:13:47.399 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:13:48.196 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-30 13:13:48.258 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:13:48.403 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path '/JwtVue'
+2020-06-30 13:13:48.431 [restartedMain] INFO  com.inspur.Application - Started Application in 14.745 seconds (JVM running for 18.222)
+2020-06-30 13:14:08.592 [http-nio-8085-exec-6] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-30 13:14:08.594 [http-nio-8085-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-30 13:14:08.609 [http-nio-8085-exec-6] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 14 ms
+2020-06-30 13:14:08.757 [http-nio-8085-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-30 13:14:09.133 [http-nio-8085-exec-6] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-30 13:14:09.992 [http-nio-8085-exec-6] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2020-06-30 13:14:10.000 [http-nio-8085-exec-6] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2020-06-30 13:39:33.972 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:39:35.381 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-30 13:39:35.416 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2020-06-30 13:40:34.786 [restartedMain] INFO  com.inspur.Application - Starting Application on zhuanghuan00 with PID 31692 (E:\IDEA_PROJECT\redisJwt\target\classes started by zhuanghuan in E:\IDEA_PROJECT\redisJwt)
+2020-06-30 13:40:34.793 [restartedMain] INFO  com.inspur.Application - No active profile set, falling back to default profiles: default
+2020-06-30 13:40:35.009 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-06-30 13:40:35.010 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-06-30 13:40:37.548 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-06-30 13:40:37.555 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data repositories in DEFAULT mode.
+2020-06-30 13:40:37.684 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90ms. Found 0 repository interfaces.
+2020-06-30 13:40:39.088 [restartedMain] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-06-30 13:40:39.923 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8085 (http)
+2020-06-30 13:40:39.945 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:40:39.948 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-06-30 13:40:39.949 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-06-30 13:40:40.286 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring embedded WebApplicationContext
+2020-06-30 13:40:40.287 [restartedMain] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 5277 ms
+2020-06-30 13:40:45.239 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: Ant [pattern='/resources/**'], []
+2020-06-30 13:40:45.379 [restartedMain] INFO  o.s.security.web.DefaultSecurityFilterChain - Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4ef77484, org.springframework.security.web.context.SecurityContextPersistenceFilter@981f187, org.springframework.security.web.header.HeaderWriterFilter@47ae3f41, org.springframework.security.web.authentication.logout.LogoutFilter@4fb3b9c9, com.inspur.system.security.filter.JwtLoginAuthenticationFilter@5ab3ff1c, com.inspur.system.security.filter.JwtRequestAuthorizationFilter@58124cf8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@303cbbe1, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@f972adf, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7b382ca, org.springframework.security.web.session.SessionManagementFilter@469a4f10, org.springframework.security.web.access.ExceptionTranslationFilter@5051da76, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2d0e019]
+2020-06-30 13:40:45.730 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-30 13:40:47.087 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-06-30 13:40:47.177 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8085"]
+2020-06-30 13:40:47.330 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8085 (http) with context path '/JwtVue'
+2020-06-30 13:40:47.355 [restartedMain] INFO  com.inspur.Application - Started Application in 17.236 seconds (JVM running for 20.529)
+2020-06-30 13:41:07.880 [http-nio-8085-exec-10] INFO  o.a.c.c.C.[Tomcat].[localhost].[/JwtVue] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-06-30 13:41:07.886 [http-nio-8085-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-06-30 13:41:07.912 [http-nio-8085-exec-10] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 26 ms
+2020-06-30 13:41:08.030 [http-nio-8085-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2020-06-30 13:41:08.438 [http-nio-8085-exec-10] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2020-06-30 13:41:09.415 [http-nio-8085-exec-10] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2020-06-30 13:41:09.429 [http-nio-8085-exec-10] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2020-06-30 14:38:05.946 [SpringContextShutdownHook] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-30 14:38:07.118 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2020-06-30 14:38:07.158 [SpringContextShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

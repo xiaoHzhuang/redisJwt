@@ -101,7 +101,7 @@
         WHERE id=#{id}
     </update>
 
-    <select id="getAll" resultMap="entityResultMap">
+    <select id="listGoods" resultMap="entityResultMap">
         select
         a.id, a.goodsName, a.goodsCode,a.goodsSize, a.salePrice, a.purchasePrice, a.size, a.supplierId,
         b.id post_id, b.supplier_name post_supplier_name, b.contact_person post_contact_person, b.phone post_phone,

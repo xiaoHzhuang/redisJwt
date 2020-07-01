@@ -10,8 +10,10 @@ import com.inspur.system.security.token.TokenRedisUtil;
 import com.inspur.system.utils.LoginUserUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -29,11 +31,12 @@ public class UserController {
     @Autowired
     private IUserService userService;
 
+
     @RequestMapping("login")
     public ServerResponse<Map<String, Object>> login(HttpServletRequest request) {
         Map<String, Object> rsMap = new HashMap<String, Object>(2);
         rsMap.put("token", request.getAttribute(Constant.TOKEN_HEADER));
-        rsMap.put("userName", request.getAttribute("userName"));
+        rsMap.put("userName", request.getAttribute("userCaption"));
         return ServerResponse.createBySuccess(rsMap);
     }
 
@@ -50,8 +53,15 @@ public class UserController {
 
 
     @RequestMapping("register")
-    public ServerResponse<String> regiser( @RequestBody SystemUser user) {
+    public ServerResponse<String> regiser(@RequestBody SystemUser user) {
         userService.regiser(user);
         return ServerResponse.createBySuccess("注册成功");
+    }
+
+
+    @RequestMapping("pwd/retrieve")
+    public ServerResponse<String> retrievePwd(@RequestParam("mail") String mailReceiver) throws Exception {
+        userService.retrievePwd(mailReceiver);
+        return ServerResponse.createBySuccess("发送邮件成功");
     }
 }

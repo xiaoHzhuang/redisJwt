@@ -41,7 +41,7 @@ public class SupplierServiceImpl implements ISupplierService {
         int pageNum = pageRequest.getPageNum();
         int pageSize = pageRequest.getPageSize();
         PageHelper.startPage(pageNum, pageSize);
-        List<Supplier> supplierList =supplierMapper.getAllSupplier(supplierQueryModel);
+        List<Supplier> supplierList =supplierMapper.listSuppliers(supplierQueryModel);
         return PageUtils.getPageResult(pageRequest,new PageInfo<Supplier>(supplierList));
     }
 

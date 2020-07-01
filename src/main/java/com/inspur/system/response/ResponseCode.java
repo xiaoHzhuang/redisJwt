@@ -20,8 +20,14 @@ public enum ResponseCode {
      */
 
     USER_EXIST(2, "用户已被注册"),
-
-
+    /**
+     * 邮箱已被注册
+     */
+    USER_MAIL_EXIST(3, "邮箱已被注册"),
+    /**
+     * 邮箱不存在
+     */
+    USER_MAIL_NOT_EXIST(4, "邮箱不存在"),
     /**
      * 登陆失败
      */
@@ -39,6 +45,7 @@ public enum ResponseCode {
      * 证书不存在
      */
     LICENCE_NOT_FOUND(7002, "Licence not found.");
+
 
     /**
      * 响应代号
